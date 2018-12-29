@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, css, createGlobalStyle } from 'styled-components'
@@ -6,8 +6,19 @@ import reset from 'minireset.css'
 import fontFace from '../../utils/fontFace'
 import theme from '../../theme'
 
+const fontStyle = ([
+	{name: 'FaktPro', src: 'FaktPro-Hair', fontWeight: 100},
+	{name: 'FaktPro', src: 'FaktPro-Thin', fontWeight: 300},
+	{name: 'FaktPro', src: 'FaktPro-Light', fontWeight: 300},
+	{name: 'FaktPro', src: 'FaktPro-Blond', fontWeight: 400},
+	{name: 'FaktPro', src: 'FaktPro-Normal', fontWeight: 500},
+	{name: 'FaktPro', src: 'FaktPro-Medium', fontWeight: 600},
+	{name: 'FaktPro', src: 'FaktPro-SemiBold', fontWeight: 700},
+]).map(font => fontFace(font)).join('\n')
+
 const GlobalStyle = createGlobalStyle`
 	${reset}
+	${fontStyle}
 	html {
 		font-family: ${theme.fonts.default};
 	}
@@ -36,7 +47,7 @@ const Layout = ({ children }) => (
 	<StaticQuery query={query}>
 		{data => (
 			<ThemeProvider theme={theme}>
-				<div>
+				<Fragment>
 					<GlobalStyle/>
 					<Helmet>
 						<html lang="en"/>
@@ -52,7 +63,7 @@ const Layout = ({ children }) => (
 						<meta property="og:image" content="/assets/og-image.jpg"/>
 					</Helmet>
 					<Main>{children}</Main>
-				</div>
+				</Fragment>
 			</ThemeProvider>
 		)}
 	</StaticQuery>

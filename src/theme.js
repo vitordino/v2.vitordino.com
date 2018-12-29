@@ -6,7 +6,7 @@ const theme = {
 		white: 'white',
 	},
 	fonts: {
-		default: fontStack,
+		default: `FaktPro, ${fontStack}`
 	},
 	breakpoints: {
 		xs: { width:  '0rem'},
