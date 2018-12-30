@@ -10,7 +10,7 @@ import Sidebar from '../Sidebar'
 
 const fontStyle = ([
 	{name: 'FaktPro', src: 'FaktPro-Hair', fontWeight: 100},
-	{name: 'FaktPro', src: 'FaktPro-Thin', fontWeight: 300},
+	{name: 'FaktPro', src: 'FaktPro-Thin', fontWeight: 200},
 	{name: 'FaktPro', src: 'FaktPro-Light', fontWeight: 300},
 	{name: 'FaktPro', src: 'FaktPro-Blond', fontWeight: 400},
 	{name: 'FaktPro', src: 'FaktPro-Normal', fontWeight: 500},
@@ -23,6 +23,17 @@ const GlobalStyle = createGlobalStyle`
 	${fontStyle}
 	html {
 		font-family: ${theme.fonts.default};
+		background: ${theme.colors.base03};
+		text-rendering: optimizeLegibility;
+		font-smooth: antialised;
+		font-smoothing: antialised;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1, 'pnum' 0, 'tnum' 1, 'onum' 0, 'lnum' 1, 'dlig' 1, 'zero' 1, 'case' 1;
+	}
+	::selection{
+		background: ${theme.colors.base03};
+		color: ${theme.colors.base88};
 	}
 `
 
@@ -42,12 +53,8 @@ const Wrapper = styled.div`
 		display: flex;
 	`}
 `
+
 const Main = styled.main`
-	text-rendering: optimizeLegibility;
-	font-smooth: antialised;
-	font-smoothing: antialised;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	background: ${p => p.theme.colors.white};
 	flex: 125;
 	min-height: 100vh;
