@@ -4,7 +4,9 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider, css, createGlobalStyle } from 'styled-components'
 import reset from 'minireset.css'
 import fontFace from '../../utils/fontFace'
+import above from '../../utils/above'
 import theme from '../../theme'
+import Sidebar from '../Sidebar'
 
 const fontStyle = ([
 	{name: 'FaktPro', src: 'FaktPro-Hair', fontWeight: 100},
@@ -35,12 +37,20 @@ const query = graphql`
 	}
 `
 
+const Wrapper = styled.div`
+	${above('md')`
+		display: flex;
+	`}
+`
 const Main = styled.main`
 	text-rendering: optimizeLegibility;
 	font-smooth: antialised;
 	font-smoothing: antialised;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: ${p => p.theme.colors.white};
+	flex: 125;
+	min-height: 100vh;
 `
 
 const Layout = ({ children }) => (
@@ -62,7 +72,10 @@ const Layout = ({ children }) => (
 						<meta property="og:url" content="/"/>
 						<meta property="og:image" content="/assets/og-image.jpg"/>
 					</Helmet>
-					<Main>{children}</Main>
+					<Wrapper>
+						<Sidebar/>
+						<Main>{children}</Main>
+					</Wrapper>
 				</Fragment>
 			</ThemeProvider>
 		)}
