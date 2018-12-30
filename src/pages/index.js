@@ -21,7 +21,7 @@ const IndexPage = ({data: {allExperience, allProjects}}) => (
 			<Heading weight={300} color={p => p.theme.colors.base44}>
 				move fast, learn everyday
 			</Heading>
-			<List title='Experiences' items={flattenEdges(allExperience)}/>
+			<List title='Work' items={flattenEdges(allExperience)}/>
 			<List title='Projects' items={flattenEdges(allProjects)}/>
 		</Wrapper>
 	</Layout>
