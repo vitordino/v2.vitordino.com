@@ -40,8 +40,6 @@ Paragraph.defaultProps = {size: 1}
 
 
 export const Heading = styled(Paragraph.withComponent(defaultTag('h2')))`
-	font-family: ${p => p.theme.fonts.soleil};
-	font-weight: 600;
 	${above('xg')`
 		font-size: ${p => sizes[p.size+2].fontSize};
 		line-height: ${p => sizes[p.size+2].lineHeight};
