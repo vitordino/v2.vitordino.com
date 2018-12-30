@@ -4,6 +4,7 @@ import { Link as BaseLink } from 'gatsby'
 const Link = ({to, children, className, style}) => {
 	const href = (to || {}).pathname || (typeof to === 'string' ? to : '/')
 	const props = {className, style, children}
+	if(!to || !href) return <span {...props}/>
 	return /^[./]/.test(href) ? (
 		<BaseLink {...props} to={to}/>
 	) : (
