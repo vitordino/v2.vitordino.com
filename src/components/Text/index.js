@@ -26,7 +26,7 @@ export const Paragraph = styled(
 )`
 	display: block;
 	color: ${pickColor};
-	text-transform: ${p => p.uppercase ? 'uppercase' : 'none'};
+	text-transform: ${p => p.uppercase ? 'uppercase' : p.lowercase ? 'lowercase' : 'none'};
 	font-weight: ${pickWeight};
 	font-size: ${p => sizes[p.size].fontSize};
 	line-height: ${p => sizes[p.size].lineHeight};
