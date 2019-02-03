@@ -62,6 +62,7 @@ export const pageQuery = graphql`
 						date
 						to
 						color
+						image
 					}
 				}
 			}
