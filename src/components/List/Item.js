@@ -64,7 +64,7 @@ const Flex = styled.div`
 
 const Item = ({title, description, date, to, color, template, image, ...props}) => (
 	<Wrapper to={to} {...props}>
-		{image && <Image src={image}/>}
+		{image && <Image src={`/assets/uploads/${image}`}/>}
 		<div style={{flex: 1}}>
 			<Flex>
 				<Title size={6} hoverColor={p => color || p.theme.colors.base88}>

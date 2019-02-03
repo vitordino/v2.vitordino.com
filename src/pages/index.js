@@ -15,14 +15,15 @@ const Wrapper = styled.div`
 	${above('xg')`padding: 3.75rem 3.5rem;`}
 `
 
-const IndexPage = ({data: {allExperience, allProjects}}) => (
+const IndexPage = ({data: {allExperience, allWork, allProjects}}) => (
 	<Layout>
 		<Wrapper>
 			<Heading weight={300} color={p => p.theme.colors.base44}>
 				move fast, learn everyday
 			</Heading>
-			<List title='Work' items={flattenEdges(allExperience)}/>
-			<List title='Projects' items={flattenEdges(allProjects)}/>
+			<List title='Experience' items={flattenEdges(allExperience)}/>
+			<List title='Works' items={flattenEdges(allWork)}/>
+			<List title='Open source' items={flattenEdges(allProjects)}/>
 		</Wrapper>
 	</Layout>
 )
@@ -44,6 +45,25 @@ export const pageQuery = graphql`
 						date
 						description
 						to
+					}
+				}
+			}
+		}
+		allWork: allMarkdownRemark(
+			filter: {frontmatter: { template: { eq: "work" } }}
+			sort: {fields: fields___slug}
+		) {
+			edges {
+				node {
+					html
+					frontmatter {
+						template
+						title
+						description
+						date
+						to
+						color
+						image
 					}
 				}
 			}
