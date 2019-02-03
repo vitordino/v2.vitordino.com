@@ -4,18 +4,19 @@ import {mix} from 'polished'
 import Link from '../Link'
 import {Paragraph, Heading} from '../Text'
 
-const Description = styled(Paragraph)`
-	opacity: 0;
-	transition: 0.3s all;
-`
-
 const Wrapper = styled(Link)`
 	display: block;
 	text-decoration: none;
 	color: currentColor;
 	margin: 3rem 0;
 	padding-bottom: 1rem;
-	&:hover ${Description}{
+
+`
+
+const Description = styled(Paragraph)`
+	transition: 0.3s all;
+	@media (hover: hover) {opacity: ${p => p.hidden ? 0 : 1}}
+	${Wrapper}:hover &{
 		opacity: 1;
 	}
 `
@@ -26,7 +27,7 @@ const Flex = styled.div`
 	justify-content: space-between;
 `
 
-const Item = ({title, description, date, to, color, ...props}) => (
+const Item = ({title, description, date, to, color, template, ...props}) => (
 	<Wrapper to={to} {...props}>
 		<Flex>
 			<Paragraph size={6} color={p => color || p.theme.colors.base88}>
@@ -40,6 +41,7 @@ const Item = ({title, description, date, to, color, ...props}) => (
 			size={0}
 			weight={600}
 			color={p => color ? mix(0.66, color, p.theme.colors.white) : p.theme.colors.base44}
+			hidden={template === 'experience'}
 		>
 			{description}
 		</Description>

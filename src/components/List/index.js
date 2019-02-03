@@ -19,18 +19,11 @@ const TitleBar = styled.div`
 const List = ({title, items = []}) => (
 	<Wrapper>
 		<TitleBar>
-			<Paragraph
-				size={3}
-				weight={500}
-				lowercase
-				color={p => p.theme.colors.base66}
-			>
+			<Paragraph size={3} weight={500} lowercase color={p => p.theme.colors.base66}>
 				{title}
 			</Paragraph>
 		</TitleBar>
-		{items.map(item => (
-			<Item key={item.title} {...item}/>
-		))}
+		{items.map(item => <Item key={item.title} {...item}/>)}
 	</Wrapper>
 )
 

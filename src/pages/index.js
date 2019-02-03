@@ -39,6 +39,7 @@ export const pageQuery = graphql`
 				node {
 					html
 					frontmatter {
+						template
 						title
 						date
 						description
@@ -55,6 +56,7 @@ export const pageQuery = graphql`
 				node {
 					html
 					frontmatter {
+						template
 						title
 						description
 						date
