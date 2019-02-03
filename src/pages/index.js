@@ -63,7 +63,9 @@ export const pageQuery = graphql`
 						date
 						to
 						color
-						image
+						image {
+							publicURL
+						}
 					}
 				}
 			}
@@ -82,7 +84,9 @@ export const pageQuery = graphql`
 						date
 						to
 						color
-						image
+						image {
+							publicURL
+						}
 					}
 				}
 			}
