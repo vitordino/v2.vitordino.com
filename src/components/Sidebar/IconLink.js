@@ -25,8 +25,8 @@ const Wrapper = styled(Link)`
 	`}
 `
 
-const IconLink = ({icon, to, ...props}) => (
-	<Wrapper to={to} {...props}>
+const IconLink = ({icon, ...props}) => (
+	<Wrapper {...props}>
 		<img src={`/assets/icons/${icon}.svg`}/>
 	</Wrapper>
 )

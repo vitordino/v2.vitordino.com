@@ -62,6 +62,7 @@ const Sidebar = () => (
 				<IconLink icon='github' to='https://github.com/vitordino'/>
 				<IconLink icon='dribbble' to='https://dribbble.com/vitordino'/>
 				<IconLink icon='mail' to='mailto:me@vitordino.com'/>
+				<IconLink anchor icon='file-text' to='/assets/uploads/vitor-dino.pdf'/>
 			</IconsWrapper>
 		</Wrapper>
 	</Relative>
