@@ -14,6 +14,7 @@ const TitleBar = styled.div`
 	padding-top: 1rem;
 	top: 0;
 	background: ${p => p.theme.colors.white};
+	z-index: 1;
 `
 
 const List = ({title, items = []}) => (
