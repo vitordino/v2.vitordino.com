@@ -70,14 +70,14 @@ const Layout = ({ children }) => (
 						<html lang="en"/>
 						<title>{data.site.siteMetadata.title}</title>
 						<meta name="description" content={data.site.siteMetadata.description}/>
-						<link rel="icon" type="image/png" href="/assets/favicon-32x32.png" sizes="32x32"/>
-						<link rel="icon" type="image/png" href="/assets/favicon-16x16.png" sizes="16x16"/>
-						<link rel="mask-icon" href="/assets/safari-pinned-tab.svg" color="#ff4400"/>
+						<link rel="icon" type="image/png" href="/assets/favicon/favicon-32x32.png" sizes="32x32"/>
+						<link rel="icon" type="image/png" href="/assets/favicon/favicon-16x16.png" sizes="16x16"/>
+						<link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#ff4400"/>
 						<meta name="theme-color" content="#fff"/>
 						<meta property="og:type" content="business.business"/>
 						<meta property="og:title" content={data.site.siteMetadata.title}/>
 						<meta property="og:url" content="/"/>
-						<meta property="og:image" content="/assets/og-image.jpg"/>
+						<meta property="og:image" content="/assets/favicon/og-image.jpg"/>
 					</Helmet>
 					<Wrapper>
 						<Sidebar/>
