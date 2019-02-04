@@ -14,6 +14,9 @@ const Wrapper = styled(Link)`
 	padding-bottom: 1rem;
 	color: currentColor;
 	transition: 0.3s all;
+	@media (hover: hover) {
+		flex-direction: row-reverse;
+	}
 `
 
 const Title = styled(Paragraph)`
@@ -37,10 +40,12 @@ const Image = styled.img`
 		margin-right: 1.5rem;
 	`}
 	@media (hover: hover) {
-		filter: grayscale(1);
+		display: none;
+		margin-right: 0;
+		margin-left: 1.5rem;
 	}
 	${Wrapper}:hover &{
-		filter: grayscale(0);
+		display: block;
 	}
 `
 
@@ -53,6 +58,15 @@ const Description = styled(Paragraph)`
 	${Wrapper}:hover &{
 		opacity: 1;
 		color: ${p => p.hoverColor ? mix(0.66, p.hoverColor, p.theme.colors.white) : p.theme.colors.base44};
+	}
+`
+
+const Year = styled(Paragraph)`
+	@media (hover: hover) {
+		display: block;
+	}
+	${Wrapper}:hover &{
+		display: ${p => p.isHideable && 'none'};
 	}
 `
 
@@ -70,9 +84,9 @@ const Item = ({title, description, date, to, color, template, image, ...props}) 
 				<Title size={6} hoverColor={p => color || p.theme.colors.base88}>
 					{title}
 				</Title>
-				<Paragraph size={2} color={p => p.theme.colors.base44}>
+				<Year isHideable={!!image} size={2} color={p => p.theme.colors.base44}>
 					{date}
-				</Paragraph>
+				</Year>
 			</Flex>
 			<Description size={0} weight={600} hidden={template === 'experience'} hoverColor={color}>
 				{description}
