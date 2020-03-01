@@ -34,7 +34,7 @@ export const pageQuery = graphql`
 	query IndexQuery {
 		allExperience: allMarkdownRemark(
 			filter: {frontmatter: { template: { eq: "experience" } }}
-			sort: {fields: fields___slug}
+			sort: {fields: fields___slug, order: DESC}
 		) {
 			edges {
 				node {
@@ -51,7 +51,7 @@ export const pageQuery = graphql`
 		}
 		allWork: allMarkdownRemark(
 			filter: {frontmatter: { template: { eq: "work" } }}
-			sort: {fields: fields___slug}
+			sort: {fields: fields___slug, order: DESC}
 		) {
 			edges {
 				node {
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
 		}
 		allProjects: allMarkdownRemark(
 			filter: {frontmatter: { template: { eq: "project" } }}
-			sort: {fields: fields___slug}
+			sort: {fields: fields___slug, order: DESC}
 		) {
 			edges {
 				node {
