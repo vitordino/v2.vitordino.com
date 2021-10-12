@@ -1,4 +1,6 @@
-# portfolio
+> for latest version go to [vitordino/vitordino.com](https://github.com/vitordino/vitordino.com)
+
+# portfolio v2
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/cdba776b-7dbe-48f4-bee1-8bb4515e8e34/deploy-status)](https://app.netlify.com/sites/vitordino/deploys)
 
